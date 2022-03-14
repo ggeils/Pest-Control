@@ -1,0 +1,24 @@
+[
+    {
+        "username": "Mary",
+        "email": "mary@me.com",
+        "password": "password",
+        "bugs": [],
+        "name": "Maribel Montes",
+        "jobTitle": "Full-Stack Development",
+        "company": "Freelance",
+        "currentProject": "Pest Control",
+        "bugsFixed": 0
+    },
+    {
+        "username": "tygro",
+        "email": "tygro@me.com",
+        "password": "password",
+        "bugs": [],
+        "name": "Tygro Avila",
+        "jobTitle": "Full-Stack Development",
+        "company": "Freelance",
+        "currentProject": "Pest Control",
+        "bugsFixed": 0
+    }
+]
