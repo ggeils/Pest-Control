@@ -21,6 +21,7 @@ const Report = () => {
       alignItems="center"
     >
       <Heading color="teal.400">Report a Bug</Heading>
+      <br></br>
       <form action="submit">
         <Box>
           <Stack spacing={4}>
