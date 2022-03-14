@@ -1,7 +1,7 @@
 // declare new state variable
 import { useState } from "react";
 
-//importing prebuilkt components from the chakra website
+// importing prebuilt components from the chakra website
 // https://chakra-ui.com/docs/components/overview
 import {
     Flex,
