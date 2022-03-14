@@ -41,7 +41,7 @@ const Report = () => {
                 type="submit"
                 variant="solid"
                 colorScheme="teal"
-                width="1920px"
+                width="100%"
               >
                 Report Bug
               </Button>
