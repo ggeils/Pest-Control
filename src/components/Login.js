@@ -14,7 +14,6 @@ import {
     chakra,
     Box,
     Link,
-    Avatar,
     FormControl,
     FormHelperText,
     InputRightElement
@@ -48,7 +47,7 @@ const Login = () => {
                 alignItems="center"
             >
                 <Bug size={'40px'}/>
-                // change colors to match style of site
+                {/* change colors to match style of site */}
                 <Heading color="teal.400">Pest Control</Heading>
                 <Box minW={{ base: "90%", md: "468px" }}>
                     <form>
