@@ -2,7 +2,7 @@
     {
         "username": "Mary",
         "email": "mary@me.com",
-        "password": "password",
+        "password": "password01",
         "bugs": [],
         "name": "Maribel Montes",
         "jobTitle": "Full-Stack Development",
@@ -13,7 +13,7 @@
     {
         "username": "tygro",
         "email": "tygro@me.com",
-        "password": "password",
+        "password": "password02",
         "bugs": [],
         "name": "Tygro Avila",
         "jobTitle": "Full-Stack Development",
