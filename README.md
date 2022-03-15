@@ -27,7 +27,7 @@ INSERT HERE
 <br>
 
 ## Repository Link
-INSERT HERE
+[Click here](https://github.com/ggeils/Pest-Control)
 <br>
 <br>
 
