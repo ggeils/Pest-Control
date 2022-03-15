@@ -1,0 +1,18 @@
+[
+    {
+        "bugName": "Image not displaying properly",
+        "productName": "E-Commerce Site",
+        "severity": "High",
+        "description": "Image is on the wrong side of the page",
+        "reproduction": "No specific instructions needed",
+        "status": "open"
+    },
+    {
+        "bugName": "Syntax error in index.js",
+        "productName": "E-Commerce Site",
+        "severity": "High",
+        "description": "Variable syntax incorrect in index.js",
+        "reproduction": "No specific instructions needed",
+        "status": "open"
+    }
+]
