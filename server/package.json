@@ -18,5 +18,11 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.6",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "browser": {
+    "crypto": false
+}
 }

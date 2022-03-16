@@ -7,7 +7,7 @@ const bugSeeds = require('./bugSeeds.json');
 db.once('open', async () => {
     await User.deleteMany({});
     await Bug.deleteMany({});
-       
+    
     // bulk create each model
     const users = await User.create(userSeeds);
     const bugs = await Bug.create(bugSeeds);
