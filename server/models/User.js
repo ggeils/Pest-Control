@@ -14,7 +14,7 @@ const bcrypt = require('bcrypt');
  * 
  * .virtual(bugsReported)
  */
-const userSchema = new Schema ({
+const userSchema = new Schema({
     username: {
         type: String,
         required: true,
@@ -25,7 +25,7 @@ const userSchema = new Schema ({
         type: String,
         required: true,
         unique: true,
-        match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,'must match an email address!'],
+        match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, 'must match an email address!'],
     },
     password: {
         type: String,
@@ -38,7 +38,7 @@ const userSchema = new Schema ({
             ref: 'Bug',
         },
     ],
-// User profile area
+    // User profile area
     name: {
         type: String,
         maxlength: 50,
@@ -62,21 +62,21 @@ const userSchema = new Schema ({
     bugsFixed: {
         type: Number,
     },
-  },
-  {
-    toJSON: {
-      virtuals: true,
-    },
-    id: false,
-  }
+},
+    {
+        toJSON: {
+            virtuals: true,
+        },
+        id: false,
+    }
 );
 
 // Create a virtual called `bugsReported` 
 userSchema
-  .virtual('bugsReported')
-  .get(function () {
-      return this.bugs.length;
-  });
+    .virtual('bugsReported')
+    .get(function () {
+        return this.bugs.length;
+    });
 
 // set up pre-save middleware to create password
 userSchema.pre('save', async function (next) {
@@ -84,10 +84,10 @@ userSchema.pre('save', async function (next) {
         const saltRounds = 10;
         this.password = await bcrypt.hash(this.password, saltRounds);
     }
-  
+
     next();
 });
-  
+
 // compare the incoming password with the hashed password
 userSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
