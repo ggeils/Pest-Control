@@ -29,18 +29,23 @@ const typeDefs = gql`
         token: ID!
         user: User
     }
-    
+
     type Query {
         users: [User]!
         user(username: String!): User
         bug(bugId: ID!): Bug
         bugs: [Bug]!
-        me: User
+        userLoged: User
     }
-    
+
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
+        updateprofile(name: String, jobTitle: String, company: String, currentProject: String): User
+        addBug(bugName: String, productName: String, severity: String, description: String, reproduction: String): Bug
+        updateBug( BugId: ID!, description: String!, reproduction: String!): Bug
+        BugFixed( BugId: ID!): Bug
+        deleteBug( BugId: ID!): User
     }
 `;
 
