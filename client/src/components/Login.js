@@ -1,5 +1,9 @@
 // declare new state variable
-import { useState } from "react";
+import React, { useState } from 'react';
+import Auth from '../utils/auth'
+// import { useMutation } from '@apollo/client';
+// import { LOGIN_USER } from '../utils/mutations';
+
 
 // importing prebuilt components from the chakra website
 // https://chakra-ui.com/docs/components/overview
@@ -16,7 +20,7 @@ import {
     Link,
     FormControl,
     FormHelperText,
-    InputRightElement
+    InputRightElement,
 } from "@chakra-ui/react";
 // imports react icons
 // https://react-icons.github.io/react-icons
@@ -27,9 +31,40 @@ const CFaLock = chakra(FaLock);
 const Bug = chakra(FaBug);
 
 const Login = () => {
-
     const [showPassword, setShowPassword] = useState(false);
     const handleShowClick = () => setShowPassword(!showPassword);
+    const [formState, setFormState] = useState({ email: "", password: "" });
+
+    // update state based on form input changes
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
+    };
+
+    // submit form
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        console.log(formState);
+        try {
+            const { data } = await Login({
+                variables: { ...formState },
+            });
+
+            Auth.login(data.login.token);
+        } catch (e) {
+            console.error(e);
+        }
+
+        // clear form values
+        setFormState({
+            email: "",
+            password: "",
+        });
+    };
     return (
         // flex is basically flex box in
         <Flex
@@ -46,7 +81,7 @@ const Login = () => {
                 justifyContent="center"
                 alignItems="center"
             >
-                <Bug size={'40px'}/>
+                <Bug size={"40px"} />
                 {/* change colors to match style of site */}
                 <Heading color="teal.400">Pest Control</Heading>
                 <Box minW={{ base: "90%", md: "468px" }}>
@@ -110,4 +145,4 @@ const Login = () => {
     );
 };
 
-export default Login
+export default Login;
