@@ -74,7 +74,31 @@ const resolvers = {
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-        
+        // update if Bug is Fixed -  bug-status is updated to close, and User-bugsFixed is increased
+        BugFixed: async (parent, { BugId }, context) => {
+            if(context.user){
+                const newStatus = await Bug.findByIdAndUpdate (
+                    BugId, { status: "close"}, { new: true }
+                );
+                await User.findByIdAndUpdate (
+                    context.user._id, { $inc: { bugsFixed: 1 } }, { new: true }
+                );
+            return newStatus;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        // delete bug
+        deleteBug: async (parent, { BugId }, context) => {
+            if(context.user){
+                const bugDelete = await Bug.findOneAndDelete({ _id: BugId });
+                return await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { bugs: bugDelete._id }},
+                    { new: true }
+                ).populate('bugs');
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
 
     },
 };
