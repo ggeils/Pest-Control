@@ -14,7 +14,7 @@ ReactDOM.render(
   <StrictMode>
     <ChakraProvider>
     <BrowserRouter>
-       <Switch>
+      <Switch>
         <Route exact path="/" component={Login} />
         <Route path="/SignUp" component={SignUp} />
         <Route path="/Report" component={Report} />
