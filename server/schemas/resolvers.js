@@ -52,6 +52,28 @@ const resolvers = {
             // If user attempts to execute this mutation and isn't logged in, throw an error
             throw new AuthenticationError('You need to be logged in!');
         },
+        // create a bug - when the report new bug is pressed
+        addBug: async (parent, args, context) => {
+            if(context.user){
+                const newBug = await Bug.create(args);
+                await User.findByIdAndUpdate (
+                    context.user._id, { $addToSet: { bugs: newBug._id } }, { new: true, runValidators: true, }
+                );
+            return newBug;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        // update a bug - update the description or reproduction of the bug
+        updateBug: async (parent, { BugId, description, reproduction }, context) => {
+            if(context.user){
+                return await Bug.findOneAndUpdate(
+                    { _id: BugId }, 
+                    { description: description, reproduction: reproduction }, 
+                    { new: true }
+                );
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
         
 
     },
