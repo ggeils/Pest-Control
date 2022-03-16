@@ -1,5 +1,5 @@
 import React from "react";
-import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
+import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 class PieRechartComponent extends React.Component {
   COLORS = ["#00FF00", "#FFFF00", "#FF0000"];
@@ -40,7 +40,8 @@ class PieRechartComponent extends React.Component {
 
   render() {
     return (
-      <PieChart width={730} height={300}>
+      <ResponsiveContainer width='100%' height={400}>
+        <PieChart>
         <Pie
           data={this.pieData}
           color="#000000"
@@ -61,6 +62,7 @@ class PieRechartComponent extends React.Component {
         <Tooltip content={<this.CustomTooltip />} />
         <Legend />
       </PieChart>
+      </ResponsiveContainer>
     );
   }
 }
