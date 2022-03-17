@@ -1,5 +1,11 @@
 import React from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import {
+  Flex,
+  Box,
+  Link
+} from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 
 class PieRechartComponent extends React.Component {
   COLORS = ["#00FF00", "#FFFF00", "#FF0000"];
@@ -40,6 +46,7 @@ class PieRechartComponent extends React.Component {
 
   render() {
     return (
+      <Flex>
       <ResponsiveContainer width='100%' height={400}>
         <PieChart>
         <Pie
@@ -63,6 +70,13 @@ class PieRechartComponent extends React.Component {
         <Legend />
       </PieChart>
       </ResponsiveContainer>
+      <Box>
+                {"  "}
+                <NavLink color="teal.500" to='/Current'>
+                    Return to Home
+                </NavLink>
+            </Box>
+      </Flex>
     );
   }
 }
