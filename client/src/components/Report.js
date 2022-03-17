@@ -7,6 +7,7 @@ import {
   Flex,
   Heading,
   Box,
+  Select,
 } from "@chakra-ui/react";
 
 const Report = () => {
@@ -28,11 +29,15 @@ const Report = () => {
               <Input placeholder="Project Name" size="lg" bg="white" />
               <Input placeholder="Bug Name" size="lg" bg="white" />
               <Input placeholder="Date Found" size="lg" bg="white" />
-              <Input
-                placeholder="Severity (Small, Medium, High)"
+              <Select
+                placeholder="Please select a level of severity"
                 size="lg"
                 bg="white"
-              />
+              >
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </Select>
               <Input placeholder="Bug Description" size="lg" bg="white" />
               <Input placeholder="Reproduction Details" size="lg" bg="white" />
               <Input placeholder="Status" size="lg" bg="white" />
