@@ -1,5 +1,9 @@
 // declare new state variable
 import { useState } from "react";
+import { useMutation } from "@apollo/client";
+import {ADD_USER } from "../utils/mutations"
+
+import Auth from "../utils/auth"
 
 // importing prebuilt components from the chakra website
 // https://chakra-ui.com/docs/components/overview
@@ -24,10 +28,27 @@ const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 const Bug = chakra(FaBug);
 
+let inputValues= {
+    username: "",
+    email: "",
+    password: "",
+}
+
 const Signup = () => {
 
     const [showPassword, setShowPassword] = useState(false);
     const handleShowClick = () => setShowPassword(!showPassword);
+    const [addUser] = useMutation(ADD_USER);
+
+    const newUser = async (inputValues) => {
+        const mutationResponse = await addUser({
+            variables: {
+                username: inputValues.username,
+                email: inputValues.email,
+                password: inputValues.password,
+            }
+        })
+    }
     return (
         // flex is basically flex box in
         <Flex
@@ -115,6 +136,7 @@ const Signup = () => {
                                 variant="solid"
                                 colorScheme="teal"
                                 width="full"
+                                onClick={newUser()}
                             >
                                 Create Account
                             </Button>
