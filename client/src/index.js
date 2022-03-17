@@ -2,12 +2,12 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import './index.css'
 import { ChakraProvider } from "@chakra-ui/react";
-import App from "./App";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Report from "./components/Report";
+import Chart from "./components/Chart";
 
 ReactDOM.render(
   <StrictMode>
