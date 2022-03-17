@@ -77,10 +77,7 @@ import {
                     </Stack>
                     <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                         <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-                        <Text fontWeight={600}>Name</Text>
-                        <Text color={'gray.500'}>Date Submitted:·</Text>
                         <Button colorScheme="green">Mark As Fixed</Button>
-                        <Button colorScheme="blue">Edit Bug</Button>
                         </Stack>
                     </Stack>
                     </Box>
@@ -90,8 +87,6 @@ import {
             ))}
         </div>
     </Center>
-
-
     );
   }
   export default CurrentBugs;
