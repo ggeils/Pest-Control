@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Report from "./components/Report";
-import Chart from "./components/Chart";
+import PieRechartComponent from "./components/Chart";
 
 ReactDOM.render(
   <StrictMode>
@@ -17,7 +17,7 @@ ReactDOM.render(
         <Route exact path="/" component={Login} />
         <Route path="/SignUp" component={SignUp} />
         <Route path="/Report" component={Report} />
-        <Route path="/Chart" component={Chart} />
+        <Route path="/Chart" component={PieRechartComponent} />
       </Switch>
       </BrowserRouter>,
     </ChakraProvider>
