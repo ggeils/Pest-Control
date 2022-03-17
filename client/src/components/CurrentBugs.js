@@ -6,6 +6,7 @@ import {
   Stack,
   Avatar,
   useColorModeValue,
+  Button
 } from '@chakra-ui/react';
 
 // export default function blogPostWithImage() {
