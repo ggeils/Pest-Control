@@ -23,6 +23,7 @@ import {
 // imports react icons
 // https://react-icons.github.io/react-icons
 import { FaUserAlt, FaLock, FaBug } from "react-icons/fa";
+import Image from './Assets/images/backgroundimage.png'
 
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
@@ -87,11 +88,11 @@ const Signup = () => {
 
     return (
         // flex is basically flex box in
+        <div style={{ backgroundImage:`url(${Image})`, backgroundSize: 'cover'}}>
         <Flex
             flexDirection="column"
             width="100wh"
             height="100vh"
-            backgroundColor="gray.200"
             justifyContent="center"
             alignItems="center"
         >
@@ -181,6 +182,7 @@ const Signup = () => {
                 </Box>
             </Stack>
         </Flex>
+        </div>
     );
 };
 

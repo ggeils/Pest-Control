@@ -63,6 +63,7 @@ import {
     }
   ];
 
+
   // export default function blogPostWithImage() {
   const CurrentBugs = () => {
     return (
@@ -72,7 +73,8 @@ import {
       width="100wh"
       height="100vh"
       justifyContent="center"
-      alignItems="center">
+      alignItems="center"
+      overflow="hidden">
         
         <Stack>
         <Center py={6}>
