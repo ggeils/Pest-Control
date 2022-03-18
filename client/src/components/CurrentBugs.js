@@ -15,7 +15,7 @@ import {
         "severity": "High",
         "description": "Image is on the wrong side of the page",
         "reproduction": "No specific instructions needed",
-        "status": "open"
+        "status": "pen"
     },
     {
         "bugName": "Syntax error in index.js",
@@ -23,7 +23,15 @@ import {
         "severity": "High",
         "description": "Variable syntax incorrect in index.js",
         "reproduction": "No specific instructions needed",
-        "status": "open"
+        "status": "Open"
+    },
+    {
+        "bugName": "Wront routing path for product page",
+        "productName": "E-Commerce Site",
+        "severity": "High",
+        "description": "Product page paths to wrong location",
+        "reproduction": "Click product page button",
+        "status": "Open"
     }
   ];
   // export default function blogPostWithImage() {
