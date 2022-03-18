@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Auth from '../utils/auth'
 // import { useMutation } from '@apollo/client';
 // import { LOGIN_USER } from '../utils/mutations';
+import { NavLink } from "react-router-dom";
 
 
 // importing prebuilt components from the chakra website
@@ -136,10 +137,10 @@ const Login = () => {
                 </Box>
             </Stack>
             <Box>
-                New to us?{" "}
-                <Link color="teal.500" href="#">
+                {"  "}
+                <NavLink color="teal.500" to='/signup'>
                     Sign Up
-                </Link>
+                </NavLink>
             </Box>
         </Flex>
     );

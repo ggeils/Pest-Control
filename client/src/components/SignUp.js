@@ -90,7 +90,7 @@ const Signup = () => {
                                         pointerEvents="none"
                                         children={<CFaUserAlt color="gray.300" />}
                                     />
-                                    <Input type="email" placeholder="email address" />
+                                    <Input type="email" placeholder="Email address" />
                                 </InputGroup>
                             </FormControl>
                             <FormControl>
@@ -99,7 +99,7 @@ const Signup = () => {
                                         pointerEvents="none"
                                         children={<CFaUserAlt color="gray.300" />}
                                     />
-                                    <Input type="text" placeholder="Display Name" />
+                                    <Input type="text" placeholder="Username" />
                                 </InputGroup>
                             </FormControl>
                             <FormControl>
