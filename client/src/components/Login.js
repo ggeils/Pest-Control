@@ -30,6 +30,7 @@ import { FaUserAlt, FaLock, FaBug } from "react-icons/fa";
 /** Added by maribel */
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+import Image from './Assets/images/backgroundimage.png'
 
 
 const CFaUserAlt = chakra(FaUserAlt);
@@ -63,12 +64,11 @@ const Login = () => {
     };
 
     return (
-        // flex is basically flex box in
+        <div style={{ height: '100%', left: 0, width: '100%', backgroundImage:`url(${Image})`, backgroundSize: 'cover'}}>
         <Flex
             flexDirection="column"
             width="100wh"
             height="100vh"
-            backgroundColor="gray.200"
             justifyContent="center"
             alignItems="center"
         >
@@ -80,7 +80,7 @@ const Login = () => {
             >
                 <Bug size={"40px"} />
                 {/* change colors to match style of site */}
-                <Heading color="teal.400">Pest Control</Heading>
+                <Heading color="teal.500">Pest Control</Heading>
                 <Box minW={{ base: "90%", md: "468px" }}>
                     <form onSubmit={handleFormSubmit}>
                         <Stack
@@ -139,6 +139,7 @@ const Login = () => {
                 </NavLink>
             </Box>
         </Flex>
+    </div>
     );
 };
 
