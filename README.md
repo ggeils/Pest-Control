@@ -17,7 +17,11 @@ Pest Control is a bug tracker for projects that allows developers to input and t
 <br>
 
 ## Screenshots
-INSERT HERE
+![LoginScreenshot] (/client/src/components/Assets/images/loginScreenshot.PNG?raw=true)
+![SignupScreenshot] (/client/src/components/Assets/images/loginScreenshot.PNG?raw=true)
+![CurrentBugsScreenshot] (/client/src/components/Assets/images/currentBugsScreenshot.PNG?raw=true)
+![reportScreenshot] (/client/src/components/Assets/images/reportScreenshot.PNG?raw=true)
+![chartScreenshot] (/client/src/components/Assets/images/chartScreenshot.PNG?raw=true)
 <br>
 <br>
 

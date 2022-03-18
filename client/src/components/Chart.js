@@ -5,13 +5,14 @@ import {
   Flex,
   Box,
   Link,
-  Button
+  Button,
+  Heading
 } from "@chakra-ui/react";
 
 import Image from './Assets/images/backgroundimage.png'
 
 class PieRechartComponent extends React.Component {
-  COLORS = ["#00FF00", "#FFFF00", "#FF0000"];
+  COLORS = ["#2DB2B5", "#18BC6B", "#FF0000"];
 
   pieData = [
     {
@@ -56,7 +57,19 @@ class PieRechartComponent extends React.Component {
       height="100vh"
       justifyContent="center"
       alignItems="center">
+      <Box
+            maxW={'400px'}
+            w={'full'}
+            bg={'white'}
+            boxShadow={'2xl'}
+            rounded={'lg'}
+            p={6}
+            textAlign={'center'}>
+              <Heading>
+                Severity Chart
+              </Heading>
       <ResponsiveContainer width='100%' height={400}>
+        
         <PieChart>
         <Pie
           data={this.pieData}
@@ -79,6 +92,7 @@ class PieRechartComponent extends React.Component {
         <Legend />
       </PieChart>
       </ResponsiveContainer>
+      </Box>
       <Box>
                 {"  "}
                 <NavLink color="teal.500" to='/current'>
