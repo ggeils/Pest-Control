@@ -30,7 +30,7 @@ Pest Control is a bug tracker for projects that allows developers to input and t
 <br>
 
 ## Deployed Link
-INSERT HERE
+[Click here](https://pest-control-ut.herokuapp.com/)
 <br>
 <br>
 
