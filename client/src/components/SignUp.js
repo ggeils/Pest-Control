@@ -1,4 +1,5 @@
 // declare new state variable
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations"
@@ -175,7 +176,9 @@ const Signup = () => {
                                 width="full"
                                 // onClick={newUser(inputValues)}
                             >
+                                <NavLink to='/current'>
                                 Create Account
+                                </NavLink>
                             </Button>
                         </Stack>
                     </form>
