@@ -4,8 +4,11 @@ import { NavLink } from "react-router-dom";
 import {
   Flex,
   Box,
-  Link
+  Link,
+  Button
 } from "@chakra-ui/react";
+
+import Image from './Assets/images/backgroundimage.png'
 
 class PieRechartComponent extends React.Component {
   COLORS = ["#00FF00", "#FFFF00", "#FF0000"];
@@ -46,7 +49,13 @@ class PieRechartComponent extends React.Component {
 
   render() {
     return (
-      <Flex>
+      <div style={{ height: '100%', left: 0, width: '100%', backgroundImage:`url(${Image})`, backgroundSize: 'cover'}}>
+      <Flex
+      flexDirection="column"
+      width="100wh"
+      height="100vh"
+      justifyContent="center"
+      alignItems="center">
       <ResponsiveContainer width='100%' height={400}>
         <PieChart>
         <Pie
@@ -73,10 +82,20 @@ class PieRechartComponent extends React.Component {
       <Box>
                 {"  "}
                 <NavLink color="teal.500" to='/current'>
+                <Button
+                type="submit"
+                variant="solid"
+                colorScheme="teal"
+                width="100%"
+                border="white"
+              >
                     Return to Home
+                  </Button>
                 </NavLink>
+
             </Box>
       </Flex>
+      </div>
     );
   }
 }

@@ -5,10 +5,13 @@ import {
     Heading,
     Text,
     Stack,
-    Avatar,
     useColorModeValue,
-    Button
+    Button,
+    SimpleGrid,
+    Flex
   } from '@chakra-ui/react';
+  import Image from './Assets/images/backgroundimage.png';
+  import '../components/index.css'
   const data = [
     {
         "bugName": "Image not displaying properly",
@@ -35,12 +38,22 @@ import {
         "status": "Open"
     }
   ];
+
   // export default function blogPostWithImage() {
   const CurrentBugs = () => {
     return (
+        <Flex
+      flexDirection="column"
+      width="100wh"
+      height="100vh"
+      backgroundColor="gray.200"
+      justifyContent="center"
+      alignItems="center">
+        <div style={{ height: '100%', left: 0, width: '100%', backgroundImage:`url(${Image})`, backgroundSize: 'cover'}}>
+        <Stack>
         <Center py={6}>
             <Box
-            maxW={'1200px'}
+            maxW={'800px'}
             w={'full'}
             bg={useColorModeValue('white', 'gray.900')}
             boxShadow={'2xl'}
@@ -51,25 +64,31 @@ import {
                 Current Bugs
             </Heading>
             {/* this is the two buttons for the report and chart */}
-            <Stack direction='row' spacing={4}>
-                <Button>
-                    <NavLink color="teal.500" to='/Report'>
+            <Center>
+            <Stack direction='row' spacing={4} mt={'10px'}>
+                <Button background="teal.400">
+                    <NavLink color="white" to='/Report'>
                     Report
                         </NavLink>
                 </Button>
-                <Button>
-                    <NavLink color="teal.500" to='/Chart'>
+                <Button background="teal.400"> 
+                    <NavLink color="white" to='/Chart'>
                     Chart
                         </NavLink>
                 </Button>
             </Stack>
+            </Center>
 
             </Box>
-        <div>
+            </Center>
+        <div class='bugCard'>
+            <Center>
+            <SimpleGrid columns={[2, null, 3]} spacing='40px'>
             {data.map((info) => (
                 <Center py={6}>
                     <Box
                         maxW={'400px'}
+                        height={'300px'}
                         w={'full'}
                         bg={'white'}
                         boxShadow={'2xl'}
@@ -78,7 +97,7 @@ import {
                         textAlign={'center'}>
                     <Stack>
                         <Text
-                        color={'green.500'}
+                        color={'teal.400'}
                         textTransform={'uppercase'}
                         fontWeight={800}
                         fontSize={'sm'}
@@ -100,7 +119,7 @@ import {
                     </Stack>
                     <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
                         <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-                        <Button colorScheme="green">Mark As Fixed</Button>
+                        <Button background="teal.400">Mark As Fixed</Button>
                         </Stack>
                     </Stack>
                     </Box>
@@ -108,8 +127,12 @@ import {
                     </Box>
                 </Center>
             ))}
+            </SimpleGrid>
+            </Center>
         </div>
-    </Center>
+    </Stack>
+    </div>
+    </Flex>
     );
   }
   export default CurrentBugs;

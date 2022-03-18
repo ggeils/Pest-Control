@@ -9,18 +9,19 @@ import {
   Box,
   Select,
 } from "@chakra-ui/react";
+import Image from './Assets/images/backgroundimage.png';
 
 const Report = () => {
   return (
+    <div style={{ backgroundImage:`url(${Image})`, backgroundSize: 'cover'}}>
     <Flex
       flexDirection="column"
       width="100wh"
       height="100vh"
-      backgroundColor="gray.200"
       justifyContent="center"
       alignItems="center"
     >
-      <Heading color="teal.400">Report a Bug</Heading>
+      <Heading color="teal.500">Report a Bug</Heading>
       <br></br>
       <form action="submit">
         <Box>
@@ -55,6 +56,8 @@ const Report = () => {
         </Box>
       </form>
     </Flex>
+    </div>
+    
   );
 };
 

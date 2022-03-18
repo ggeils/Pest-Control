@@ -63,6 +63,7 @@ const Login = () => {
     };
 
     return (
+        <div style={{ height: '100%', left: 0, width: '100%', backgroundImage:`url(${Image})`, backgroundSize: 'cover'}}>
         // flex is basically flex box in
         <Flex
             flexDirection="column"
@@ -139,6 +140,7 @@ const Login = () => {
                 </NavLink>
             </Box>
         </Flex>
+    </div>
     );
 };
 
