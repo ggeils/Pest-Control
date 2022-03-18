@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import {
     Box,
     Center,
@@ -49,6 +50,20 @@ import {
             <Heading fontSize={'2xl'} fontFamily={'body'}>
                 Current Bugs
             </Heading>
+            {/* this is the two buttons for the report and chart */}
+            <Stack direction='row' spacing={4}>
+                <Button>
+                    <NavLink color="teal.500" to='/Report'>
+                    Report
+                        </NavLink>
+                </Button>
+                <Button>
+                    <NavLink color="teal.500" to='/Chart'>
+                    Chart
+                        </NavLink>
+                </Button>
+            </Stack>
+
             </Box>
         <div>
             {data.map((info) => (

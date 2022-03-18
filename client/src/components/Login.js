@@ -27,6 +27,11 @@ import {
 // https://react-icons.github.io/react-icons
 import { FaUserAlt, FaLock, FaBug } from "react-icons/fa";
 
+/** Added by maribel */
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+
+
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 const Bug = chakra(FaBug);
@@ -35,37 +40,28 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const handleShowClick = () => setShowPassword(!showPassword);
     const [formState, setFormState] = useState({ email: "", password: "" });
+    const [ login, { data, loading, error} ] = useMutation(LOGIN_USER);
 
-    // update state based on form input changes
+    // update state based on form input changes //
     const handleChange = (event) => {
         const { name, value } = event.target;
-
-        setFormState({
-            ...formState,
-            [name]: value,
-        });
+        setFormState({ ...formState, [name]: value, });
     };
 
-    // submit form
+    // submit form //
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         console.log(formState);
         try {
-            const { data } = await Login({
-                variables: { ...formState },
-            });
-
-            Auth.login(data.login.token);
-        } catch (e) {
-            console.error(e);
-        }
-
+            const dataFROMlogin = await login({ variables: { email: formState.email, password: formState.password }, });
+            const token = dataFROMlogin.data.login.token;
+            Auth.login(token);
+        } 
+        catch (e) { console.error(e); }
         // clear form values
-        setFormState({
-            email: "",
-            password: "",
-        });
+        setFormState({ email: '', password: '', });
     };
+
     return (
         // flex is basically flex box in
         <Flex
@@ -86,7 +82,7 @@ const Login = () => {
                 {/* change colors to match style of site */}
                 <Heading color="teal.400">Pest Control</Heading>
                 <Box minW={{ base: "90%", md: "468px" }}>
-                    <form>
+                    <form onSubmit={handleFormSubmit}>
                         <Stack
                             spacing={4}
                             p="1rem"
@@ -99,7 +95,7 @@ const Login = () => {
                                         pointerEvents="none"
                                         children={<CFaUserAlt color="gray.300" />}
                                     />
-                                    <Input type="email" placeholder="Email Address" />
+                                    <Input type="email" placeholder="Email Address" name="email" onChange={handleChange}/>
                                 </InputGroup>
                             </FormControl>
                             <FormControl>
@@ -111,7 +107,7 @@ const Login = () => {
                                     />
                                     <Input
                                         type={showPassword ? "text" : "password"}
-                                        placeholder="Password"
+                                        placeholder="Password" name="password" onChange={handleChange} 
                                     />
                                     <InputRightElement width="4.5rem">
                                         <Button h="1.75rem" size="sm" onClick={handleShowClick}>
