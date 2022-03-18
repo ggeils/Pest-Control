@@ -36,20 +36,44 @@ import {
         "description": "Product page paths to wrong location",
         "reproduction": "Click product page button",
         "status": "Open"
+    },
+    {
+        "bugName": "Image not displaying properly",
+        "productName": "E-Commerce Site",
+        "severity": "High",
+        "description": "Image is on the wrong side of the page",
+        "reproduction": "No specific instructions needed",
+        "status": "pen"
+    },
+    {
+        "bugName": "Syntax error in index.js",
+        "productName": "E-Commerce Site",
+        "severity": "High",
+        "description": "Variable syntax incorrect in index.js",
+        "reproduction": "No specific instructions needed",
+        "status": "Open"
+    },
+    {
+        "bugName": "Wront routing path for product page",
+        "productName": "E-Commerce Site",
+        "severity": "High",
+        "description": "Product page paths to wrong location",
+        "reproduction": "Click product page button",
+        "status": "Open"
     }
   ];
 
   // export default function blogPostWithImage() {
   const CurrentBugs = () => {
     return (
+    <div style={{ height: '100%', left: 0, width: '100%', backgroundImage:`url(${Image})`, backgroundSize: 'cover'}}>
         <Flex
       flexDirection="column"
       width="100wh"
       height="100vh"
-      backgroundColor="gray.200"
       justifyContent="center"
       alignItems="center">
-        <div style={{ height: '100%', left: 0, width: '100%', backgroundImage:`url(${Image})`, backgroundSize: 'cover'}}>
+        
         <Stack>
         <Center py={6}>
             <Box
@@ -131,8 +155,8 @@ import {
             </Center>
         </div>
     </Stack>
-    </div>
     </Flex>
+    </div>
     );
   }
   export default CurrentBugs;
